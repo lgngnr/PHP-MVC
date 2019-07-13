@@ -1,3 +1,3 @@
 <?php 
-    echo "<h1>PHP MVC</h1>";
+    echo "<h1>PHP MVC</h1>"; 
 ?>
