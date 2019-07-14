@@ -1,11 +1,12 @@
 <?php
 
-    class Pages{
+    class Pages extends Controller{
 
         public function __construct(){}
 
         public function index(){
             echo "<h1> Home Index</h1>";
+            $this->view('hello');
         }
 
         public function create($params){
