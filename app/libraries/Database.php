@@ -16,14 +16,14 @@
 
         public function __construct(){
             // Set DSN
-            $dns = "mysql://$this->host;dbname:$this->dn_name";
+            $dns = "mysql:host=$this->host;dbname=$this->db_name";
             $options = array(
                 PDO::ATTR_PERSISTENT => true,
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
             );
             // Create PDO
             try{
-                $this->dbh = new PDO($dns, $this->user, $this->pass);
+                $this->dbh = new PDO($dns, $this->user, $this->pass, $options);
             }catch(PDOException $e){
                 $this->error = $e->getMessage();
                 echo $this->error;
