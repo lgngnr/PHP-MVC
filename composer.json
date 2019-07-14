@@ -1,5 +1,12 @@
 {
-    "require": {
-        
-    }
-} 
+    "name": "php/mvc",
+    "description": "PHP MVC APP",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Luigi",
+            "email": "luiginigrelli@me.com"
+        }
+    ],
+    "require": {}
+}
