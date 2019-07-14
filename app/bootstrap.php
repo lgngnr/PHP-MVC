@@ -6,7 +6,7 @@
 
     // Init Core library
     $core = new Core;
-    print_r($core->getUrl());
+    //print_r($core->getUrl());
 
 
 ?>
