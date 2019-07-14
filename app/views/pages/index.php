@@ -1,5 +1,6 @@
-<?php 
+<?php require APPROOT . "/views/include/header.php"; ?>
 
-    echo "<h1>Index view</h1>";
-    echo "<h1>Title: " . $data['title'] . "</h1>"; 
-?>
+<h1>Index view</h1>
+<h1>Title: <?php $data['title'] ?></h1>
+
+<?php require APPROOT . "/views/include/footer.php"; ?>

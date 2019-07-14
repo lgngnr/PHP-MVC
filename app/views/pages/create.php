@@ -1,4 +1,5 @@
-<?php 
+<?php require APPROOT . "/views/include/header.php"; ?>
 
-    echo "<h1>Create view</h1>";
-?>
+<h1>Create view</h1>
+
+<?php require APPROOT . "/views/include/footer.php"; ?>
