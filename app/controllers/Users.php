@@ -66,7 +66,8 @@
                         
                         // Register User
                         if($this->userModel->register($data)){
-
+                            // Redirect to login
+                            header("location: " . URLROOT . "/users/login");
                         }else{
                             die("Something went wrong");
                         }
