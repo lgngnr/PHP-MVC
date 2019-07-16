@@ -8,9 +8,9 @@
         }
 
         public function checkUserExistByEmail($email){
-            $this->db->query("SELECT * from users WHERE email = :email");
+            $this->db->query("SELECT * FROM users WHERE email = :email");
             $this->db->bind(':email', $email);
-            $row = $this->db->single($sql);
+            $row = $this->db->single();
 
             // Check if user exists
             if($this->db->rowCount() > 0){
