@@ -19,5 +19,13 @@
         public function create($params = []){
             $this->view('pages/create');
         }
+
+        public function about($params = []){
+            $data = [
+                'title'=>'About',
+                'description'=> 'App to share posts',
+            ];
+            $this->view('pages/about', $data);
+        }
     }
 ?>
