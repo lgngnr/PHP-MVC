@@ -86,6 +86,36 @@
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 // Process form
 
+                //Sanitize POST Data
+                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+
+                // Init data
+                $data = [
+                    'email' => trim($_POST['email']),
+                    'password' => trim($_POST['password']),
+                    'email_error' => '',
+                    'password_error' => '',
+                ];
+
+                // Validate email
+                if(empty($data['email'])){
+                    $data['email_error'] = 'Please enter email';
+                }
+
+                // Validate password
+                if(empty($data['password'])){
+                    $data['password_error'] = 'Please enter password';
+                }
+
+                // Make sure errors are empty
+                if( empty($data['email_error'])&& empty($data['password_error'])){
+                        // valid
+                        die('success'); 
+                }else{
+                    // Load view wiith errors
+                    $this->view('users/login', $data);
+                }
+
             }else{
                 // Init data
                 $data = [
