@@ -29,7 +29,7 @@
                     <label for="c_password">Confirm Password: <sup>*</sup></label>
                     <input type="password" name="c_password" class="form-control form-control-lg
                         <?php echo !empty($data['c_password_error']) ? 'is-invalid' : '' ;?>" 
-                        value="<?php echo $data['c_password'] ?>">
+                        value="<?php echo $data['c_password_error'] ?>">
                     <span class="invalid-feedback"><?php echo $data['c_password']; ?></span>
                 </div>
                 <div class="row">
