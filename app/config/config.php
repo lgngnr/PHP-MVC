@@ -12,4 +12,6 @@
     define('URLROOT', 'http://php-mvc.com');
     // Site Name
     define('SITENAME', 'Custom PHP MVC framework');
+    // App version
+    define('APPVERSION', '1.0.0');
 ?>
