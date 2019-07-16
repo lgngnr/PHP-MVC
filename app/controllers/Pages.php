@@ -9,7 +9,8 @@
         public function index(){
             $posts = $this->postModel->getPosts();
             $data = [
-                'title'=>'Welcome',
+                'title'=>'SharePosts',
+                'description'=> 'Simple social network on MCV Framework',
                 'posts'=>$posts
             ];
             $this->view('pages/index', $data);
