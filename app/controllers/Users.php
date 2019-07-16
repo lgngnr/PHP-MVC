@@ -61,7 +61,15 @@
                 if( empty($data['name_error']) && empty($data['email_error'])
                     && empty($data['password_error']) && empty($data['c_password_error'])){
                         // valid
-                        die('success'); 
+                        // Hashing password
+                        $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
+                        
+                        // Register User
+                        if($this->userModel->register($data)){
+
+                        }else{
+                            die("Something went wrong");
+                        }
                 }else{
                     // Load view wiith errors
                     $this->view('users/register', $data);
