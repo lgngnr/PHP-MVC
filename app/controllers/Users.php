@@ -123,12 +123,19 @@
                     $data['password_error'] = 'Please enter password';
                 }
 
+                // Check user email
+                if($this->userModel->checkUserExistByEmail($data['email'])){
+                    // User found
+                }else{
+                    $data['email_error'] = 'No user found';
+                }
+
                 // Make sure errors are empty
                 if( empty($data['email_error'])&& empty($data['password_error'])){
                         // valid
                         die('success'); 
                 }else{
-                    // Load view wiith errors
+                    // Load view with errors
                     $this->view('users/login', $data);
                 }
 
