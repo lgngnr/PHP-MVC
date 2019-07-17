@@ -38,13 +38,13 @@
                     $data['title_error'] = "Please add a title to the post";
                 }
                 // Validate body
-                if(empty($data['title'])){
+                if(empty($data['body'])){
                     $data['body_error'] = "Please enter post text";
                 }
 
                 // If no error, save the post
                 if(empty($data['title_error']) && empty($data['body_error'])){
-
+                    die('success');
                 }else{
                     $this->view('posts/add', $data);
                 }

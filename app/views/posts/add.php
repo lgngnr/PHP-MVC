@@ -4,7 +4,7 @@
 <div class="card card-body bg-light mt-5">
     <h2> Add Post </h2>
     <p> Create a post with this form </p>
-    <form action="<?php echo URLROOT . "/users/add"; ?>" method="post">
+    <form action="<?php echo URLROOT . "/posts/add"; ?>" method="post">
         <div class="form-group">
             <!-- Title -->
             <label for="title">Title: <sup>*</sup></label>
