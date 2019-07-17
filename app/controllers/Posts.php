@@ -64,6 +64,7 @@
         }
 
         public function show($id){
+            $post = $this->postModel->getPost($id);
             $data = [];
             $this->view('posts/show', $data);
         }
