@@ -66,9 +66,9 @@
 
         public function show($id){
             $post = $this->postModel->getPost($id);
-            $user = $this->userModel->getUserById($id);
+            $user = $this->userModel->getUserById($_SESSION['user_id']);
             $data = [
-                'post'=> $post,
+                'post' => $post,
                 'user' => $user
             ];
             $this->view('posts/show', $data);
