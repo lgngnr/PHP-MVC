@@ -7,11 +7,12 @@
         }
 
         public function index(){
-            $posts = $this->postModel->getPosts();
+            if(isLoggedIn()){
+                header("location: " . URLROOT . "/posts");
+            }
             $data = [
                 'title'=>'SharePosts',
-                'description'=> 'Simple social network on MCV Framework',
-                'posts'=>$posts
+                'description'=> 'Simple social network on MCV Framework'
             ];
             $this->view('pages/index', $data);
         }
