@@ -44,7 +44,13 @@
 
                 // If no error, save the post
                 if(empty($data['title_error']) && empty($data['body_error'])){
-                    die('success');
+                    // Save the post
+                    if($this->postModel->add($data)){
+                        flash('post_added', 'Post Added');
+                        header('location: ' . URLROOT . '/posts');
+                    }else{
+                        die('Something went wrong');
+                    }
                 }else{
                     $this->view('posts/add', $data);
                 }
