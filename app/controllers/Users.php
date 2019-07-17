@@ -137,10 +137,9 @@
                     
                     if($loggedInUser){
                         // Store session
-
+                        $this->createUserSession($loggedInUser);
                     }else{
-                        // Redirect with error
-                        $this->view('users/login', $data);
+                        // Redirect with error 
                         $data['password_error'] = "Password incorrect";
                         $this->view('users/login', $data);
                     }
@@ -163,6 +162,14 @@
                 $this->view('users/login', $data);
 
             }
+        }
+
+        private function createUserSession($user){
+            $_SESSION['user_id'] = $user->id;
+            $_SESSION['user_email'] = $user->email;
+            $_SESSION['user_name'] = $user->name;
+            // redirect
+            header("location: " . URLROOT . "/pages/index");
         }
 
     }
