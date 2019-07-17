@@ -123,4 +123,25 @@
                 $this->view('posts/edit', $data); 
             }
         }
+
+        public function delete($id){
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+                // Check for owner
+                $post = $this->postModel->getPost($id); 
+                if($post->user_id != $_SESSION['user_id']){
+                    header('location: ' . URLROOT . '/posts');
+                }
+                
+                if($this->postModel->deletePost($id)){
+                    flash('post_message', 'Poste Removed');
+                    header('location: ' . URLROOT . '/posts');
+                }else{
+                    die('Something went wrong');
+                }
+            }else{
+                // Redirect to /posts
+                header('location: ' . URLROOT . '/posts');
+            }
+        }
     }
