@@ -34,5 +34,13 @@
                 return false;
             }
         }
+
+        public function getPost($id){
+            $this->db->query("SELECT * FROM posts WHERE id = :id");
+            // Bind values
+            $this->db->bind(':id', $id);
+
+            return $this->db->single();
+        }
     }
 ?>
