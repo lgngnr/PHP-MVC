@@ -65,7 +65,9 @@
                         $data['password'] = password_hash($data['password'], PASSWORD_BCRYPT);
                         
                         // Register User
-                        if($this->userModel->register($data)){
+                        if($this->userModel->register($data)){ 
+                            // Flash MSG
+                            flash("register_success", "You are registered and can log in");
                             // Redirect to login
                             header("location: " . URLROOT . "/users/login");
                         }else{
