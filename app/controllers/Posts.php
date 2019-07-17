@@ -3,10 +3,10 @@
 
         public function __construct(){
             // If not logged redirect to login
-            if(!isset($_SESSION['user_id'])){
+            if(!isLoggedIn()){
                 header("location: " . URLROOT . "/users/login");
             }
-            
+
             $this->userModel = $this->model('Post');
         }
 
