@@ -141,7 +141,7 @@
                     }else{
                         // Redirect with error 
                         $data['password_error'] = "Password incorrect";
-                        $this->view('users/login', $data);
+                        $this->view('posts/index', $data);
                     }
                        
                 }else{
