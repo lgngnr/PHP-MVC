@@ -7,12 +7,16 @@
                 header("location: " . URLROOT . "/users/login");
             }
 
-            $this->userModel = $this->model('Post');
+            $this->postModel = $this->model('Post');
         }
 
         public function index(){
-            $data = [];
-            $this->view('posts/index');
+            // GET Posts
+            $posts = $this->postModel->getPosts();
+            $data = [
+                'posts'=> $posts
+            ];
+            $this->view('posts/index', $data);
         }
     }
 ?>
