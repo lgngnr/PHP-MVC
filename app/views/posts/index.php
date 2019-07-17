@@ -15,7 +15,7 @@
     <div class="card card-body mb-3">
         <h4 class="card-title"><?php echo $post->title; ?></h4>
         <div class="bg-light p-2 mb3">
-            Written by 
+            Written by <?php echo $post->name ?>
         </div>
     </div>
 <?php endforeach;?>
