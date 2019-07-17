@@ -132,8 +132,19 @@
 
                 // Make sure errors are empty
                 if( empty($data['email_error'])&& empty($data['password_error'])){
-                        // valid
-                        die('success'); 
+                    // valid, logging the user
+                    $loggedInUser = $this->userModel->login($data['email'], $data['password']);
+                    
+                    if($loggedInUser){
+                        // Store session
+
+                    }else{
+                        // Redirect with error
+                        $this->view('users/login', $data);
+                        $data['password_error'] = "Password incorrect";
+                        $this->view('users/login', $data);
+                    }
+                       
                 }else{
                     // Load view with errors
                     $this->view('users/login', $data);
