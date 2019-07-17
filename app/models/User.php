@@ -60,5 +60,14 @@
             session_destroy();
             header("location: " . URLROOT . "/users/login");
         }
+
+        // Check if user is logged
+        public function isLoggedIn(){
+            if($_SESSION['user_id']){
+                return true;
+            }else{
+                return false;
+            }
+        }
     }
 ?>
