@@ -8,7 +8,7 @@
          * It should load app/views/pages/index.php
           */
         public function testIndex(){
-
+            $this->assertTrue(true);
         }
     }
 ?>

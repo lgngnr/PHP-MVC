@@ -32,12 +32,7 @@
 
         // prepared statement with query
         public function query($sql){
-            try{
-                $this->stmt = $this->dbh->prepare($sql);
-            }catch(PDOException $e){
-                $this->error = $e->getMessage();
-                echo $this->error;
-            }
+            $this->stmt = $this->dbh->prepare($sql);
         }
 
         // Bind values
@@ -57,12 +52,7 @@
                         $type = PDO::PARAM_STR; 
                 }
             }
-            try{
-                $this->stmt->bindValue($param, $value, $type);
-            }catch(PDOException $e){
-                $this->error = $e->getMessage();
-                echo $this->error;
-            }
+            $this->stmt->bindValue($param, $value, $type);
         }
 
         // Execute prepared statement
@@ -72,23 +62,13 @@
 
         // Get result set as array of objects
         public function resultSet(){
-            try{
-                $this->execute();
-            }catch(PDOException $e){
-                $this->error = $e->getMessage();
-                echo $this->error;
-            }
+            $this->execute();
             return $this->stmt->fetchAll(PDO::FETCH_OBJ);
         }
 
         // Get single row
         public function single(){
-            try{
-                $this->execute();
-            }catch(PDOException $e){
-                $this->error = $e->getMessage();
-                echo $this->error;
-            }
+            $this->execute();
             return $this->stmt->fetch(PDO::FETCH_OBJ);
         }
 
